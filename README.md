@@ -18,6 +18,17 @@ To give you a better idea of how the Vigil Chatbot Widget looks and functions, h
 - [Contributing](#contributing)
 - [License](#license)
 
+##Backend Integration
+The frontend widget seamlessly integrates with the AEGIS backend hosted on Runpod. When a user sends a message, the widget securely transmits the request to the backend API endpoint. The backend processes the request using natural language understanding models, generates an appropriate response based on Vigil's proprietary knowledge base, and sends the response back to the widget for display.
+To ensure a production-ready setup, the Runpod backend deployment features:
+
+Autoscaling to handle variable traffic loads
+Monitoring and logging for performance insights
+Secure HTTPS communication with the frontend
+Regular backups and disaster recovery measures
+
+You can access the backend API documentation and test out requests at https://aegis-backend.runpod.io/docs.
+
 ## Features
 - Instant access to AEGIS, Vigil's AI Property Protection Consultant
 - Real-time chat interface for seamless user interaction
