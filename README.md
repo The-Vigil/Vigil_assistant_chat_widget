@@ -8,6 +8,7 @@ To give you a better idea of how the AI Assistant Chat Widget looks and function
 
 ### Chat Interface
 ![Chat Interface](images/chat-interface.png)
+![Chat Widget](images/floating.png)
 
 ## Table of Contents
 - [Features](#features)
