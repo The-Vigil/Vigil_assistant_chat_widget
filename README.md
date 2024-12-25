@@ -33,7 +33,7 @@ To ensure a production-ready setup, the RunPod backend deployment features:
 - Automatic resource cleanup and memory management
 - Error handling and recovery mechanisms
 
-Backend repository: https://github.com/The-Vigil/Vigil_Assistant
+Backend repository: https://github.com/The-Vigil/Vigil_Assistant, https://github.com/sayedRaheel/Vigil_Assistant
 
 You can access the RunPod serverless endpoints and documentation at https://www.runpod.io/console/serverless.
 
