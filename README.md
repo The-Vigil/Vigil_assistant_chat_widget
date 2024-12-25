@@ -1,10 +1,10 @@
-# Vigil Chatbot Frontend Widget
+# AI Assistant Chat Widget
 
-This repository contains the frontend widget for Vigil's AI-powered chatbot, AEGIS (Autonomous Enhanced Guidance and Intelligent Support). AEGIS serves as Vigil's dedicated Property Protection Consultant, assisting users with property protection inquiries and providing general guidance about Vigil's digital verification system.
+This repository contains a modern frontend widget for an VIIGIL AI-powered chatbot assistant. Built with React and integrated with RunPod's serverless infrastructure, this widget provides a seamless voice and text interaction experience. The assistant serves as a personal AI consultant, capable of handling voice input, providing text responses, and delivering natural voice responses.
 
 ## Screenshots
 
-To give you a better idea of how the Vigil Chatbot Widget looks and functions, here are a few screenshots:
+To give you a better idea of how the AI Assistant Chat Widget looks and functions, here are a few screenshots:
 
 ### Chat Interface
 ![Chat Interface](images/chat-interface.png)
@@ -19,86 +19,134 @@ To give you a better idea of how the Vigil Chatbot Widget looks and functions, h
 - [License](#license)
 
 ## Backend Integration
-The frontend widget seamlessly integrates with the AEGIS backend hosted on Runpod. When a user sends a message, the widget securely transmits the request to the backend API endpoint. The backend processes the request using natural language understanding models, generates an appropriate response based on Vigil's proprietary knowledge base, and sends the response back to the widget for display.
-To ensure a production-ready setup, the Runpod backend deployment features:
+The frontend widget seamlessly integrates with a RunPod serverless backend. When a user sends a message (either text or voice), the widget securely transmits the request to the RunPod endpoint. The backend processes the request using:
 
-Autoscaling to handle variable traffic loads
-Monitoring and logging for performance insights
-Secure HTTPS communication with the frontend
-Regular backups and disaster recovery measures
-https://github.com/The-Vigil/Vigil_Assistant
-You can access the backend API documentation and test out requests at https://www.runpod.io/console/serverless.
+- Voice transcription via Whisper for audio input
+- LLaMA 70B model for natural language understanding and response generation
+- OpenAI's TTS for converting responses to natural speech
+
+To ensure a production-ready setup, the RunPod backend deployment features:
+- Chunked processing for efficient audio handling
+- Parallel processing of LLM and TTS requests
+- Secure HTTPS communication with the frontend
+- Automatic resource cleanup and memory management
+- Error handling and recovery mechanisms
+
+Backend repository: [Link to your backend repo]
+
+You can access the RunPod serverless endpoints and documentation at https://www.runpod.io/console/serverless.
 
 ## Features
-- Instant access to AEGIS, Vigil's AI Property Protection Consultant
-- Real-time chat interface for seamless user interaction
-- Customizable appearance to match your website's branding
-- Lightweight and easily embeddable in any web page
-- Secure communication with Vigil's backend services
-- Supports multiple languages (English, Spanish, French, German, Italian)
+- 🎤 Voice Interaction
+  - Real-time voice recording and transcription
+  - Natural text-to-speech responses
+  - Visual feedback during recording
+
+- 💬 Advanced Chat Interface
+  - Modern dark theme design
+  - Smooth animations and transitions
+  - Real-time response streaming
+  - Message history with custom scrolling
+
+- ⚡ Efficient Processing
+  - Chunked audio processing
+  - Parallel request handling
+  - Optimized resource usage
+  - Automatic cleanup
+
+- 🎨 Rich UI Elements
+  - Animated message bubbles
+  - Loading indicators
+  - Recording status feedback
+  - Predefined quick actions
 
 ## Installation
-To add the Vigil Chatbot Widget to your website, follow these steps:
 
-1. Include the following script tag in your HTML file, just before the closing `</body>` tag:
+1. Install the required dependencies:
+```bash
+npm install lucide-react
+```
 
-   ```html
-   <script src="https://cdn.vigil.ai/chatbot/widget.js" async defer></script>
-   ```
+2. Create environment variables:
+```env
+NEXT_PUBLIC_RUNPOD_API_KEY=your_runpod_api_key
+NEXT_PUBLIC_RUNPOD_ENDPOINT_ID=your_endpoint_id
+```
 
-2. Add the `vigil-chatbot` container element where you want the widget to appear:
+3. Import and use the component:
+```jsx
+import FloatingChatWindow from './components/FloatingChatWindow';
 
-   ```html
-   <div id="vigil-chatbot"></div>
-   ```
-
-3. Optionally, you can pass configuration options to customize the widget's behavior and appearance (see [Configuration](#configuration)).
+function App() {
+  return (
+    <div>
+      <FloatingChatWindow />
+    </div>
+  );
+}
+```
 
 ## Usage
-Once installed, the Vigil Chatbot Widget will automatically load on your web page. Users can interact with AEGIS by clicking on the chatbot icon in the bottom-right corner of the screen. This will open the chat interface where users can type their questions and receive instant responses from AEGIS.
+The chat widget provides an intuitive interface for both voice and text interactions:
 
-The widget provides a user-friendly interface with features such as:
-- Typing indicators to show when AEGIS is processing a request
-- Persistent conversation history across sessions
-- Options to minimize or close the chat window
-- Buttons for common queries and quick replies
+### Voice Input
+1. Click the microphone button to start recording
+2. Speak your message
+3. Click stop when finished
+4. The message will be transcribed and processed
+5. Listen to the AI's voice response
+
+### Text Input
+1. Type your message in the input field
+2. Press Enter or click Send
+3. View the AI's response
+4. Listen to the voice response
 
 ## Configuration
-The Vigil Chatbot Widget can be customized using configuration options. To set these options, add a `vigil-chatbot-config` object to your page before loading the widget script:
+You can customize the widget's behavior by modifying the environment variables:
 
-```html
-<script>
-  window.vigilChatbotConfig = {
-    // Configuration options go here
-    backgroundColor: '#F0F0F0',
-    ctaText: 'Ask AEGIS',
-    // ...
-  };
-</script>
+```env
+NEXT_PUBLIC_RUNPOD_API_KEY=your_api_key
+NEXT_PUBLIC_RUNPOD_ENDPOINT_ID=your_endpoint_id
 ```
 
-Available configuration options include:
-- `backgroundColor`: The background color of the chat window (default: `'#FFFFFF'`)
-- `ctaText`: The text displayed on the main call-to-action button (default: `'Chat with AEGIS'`)
-- `welcomeMessage`: The initial message shown when a user opens the chat (default: `'Hello! How can I assist you today?'`) 
-- `language`: The default language for AEGIS responses (default: `'en'`)
-- ... 
-
-See the [Configuration Guide](docs/configuration.md) for a complete list of options and details on how to use them.
+Additional configuration options can be passed as props:
+```jsx
+<FloatingChatWindow 
+  initialMessage="How can I help?"
+  theme="dark"
+  position="bottom-right"
+/>
+```
 
 ## Customization
-In addition to configuration options, the appearance of the Vigil Chatbot Widget can be extensively customized using CSS. The widget's elements use BEM-style class names, making it easy to target specific parts of the UI.
+The widget uses Tailwind CSS for styling and can be customized by:
 
-To apply your own styles, simply add a `<style>` block or link an external stylesheet after the widget script:
-
-```html
-<link rel="stylesheet" href="/path/to/your/chatbot-styles.css">
+1. Modifying the Tailwind config:
+```javascript
+// tailwind.config.js
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        chat: {
+          bg: '#1a1b26',
+          secondary: '#24283b',
+          accent: '#414868',
+        }
+      },
+      // ... animations config
+    }
+  }
+}
 ```
 
-Refer to the [Customization Guide](docs/customization.md) for a full list of CSS classes and customization examples.
+2. Adding custom CSS classes
+3. Modifying component props
+4. Creating theme variations
 
 ## Contributing
-We welcome contributions to improve the Vigil Chatbot Widget! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details on how to submit bug reports, suggest new features, or open pull requests.
+Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
 
 ## License
-Private
+[Your chosen license]
