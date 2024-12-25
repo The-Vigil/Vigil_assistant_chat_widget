@@ -2,6 +2,13 @@
 
 This repository contains the frontend widget for Vigil's AI-powered chatbot, AEGIS (Autonomous Enhanced Guidance and Intelligent Support). AEGIS serves as Vigil's dedicated Property Protection Consultant, assisting users with property protection inquiries and providing general guidance about Vigil's digital verification system.
 
+## Screenshots
+
+To give you a better idea of how the Vigil Chatbot Widget looks and functions, here are a few screenshots:
+
+### Chat Interface
+![Chat Interface](images/chat-interface.png)
+
 ## Table of Contents
 - [Features](#features)
 - [Installation](#installation)
@@ -83,6 +90,4 @@ Refer to the [Customization Guide](docs/customization.md) for a full list of CSS
 We welcome contributions to improve the Vigil Chatbot Widget! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details on how to submit bug reports, suggest new features, or open pull requests.
 
 ## License
-The Vigil Chatbot Widget is released under the [MIT License](LICENSE.md). Feel free to use, modify, and distribute the code as permitted by the license.
-
-If you have any questions or need assistance, please contact our support team at support@vigil.ai. Thank you for choosing Vigil to protect your property!
+Private
