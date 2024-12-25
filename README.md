@@ -1,6 +1,6 @@
 # AI Assistant Chat Widget
 
-This repository contains a modern frontend widget for an VIIGIL AI-powered chatbot assistant. Built with React and integrated with RunPod's serverless infrastructure, this widget provides a seamless voice and text interaction experience. The assistant serves as a personal AI consultant, capable of handling voice input, providing text responses, and delivering natural voice responses.
+This repository contains a frontend widget for VIIGIL AI-powered chatbot assistant. Built with React and integrated with RunPod's serverless infrastructure, this widget provides a seamless voice and text interaction experience. The assistant serves as a personal AI consultant, capable of handling voice input, providing text responses, and delivering natural voice responses.
 
 ## Screenshots
 
