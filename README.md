@@ -26,8 +26,8 @@ Autoscaling to handle variable traffic loads
 Monitoring and logging for performance insights
 Secure HTTPS communication with the frontend
 Regular backups and disaster recovery measures
-
-You can access the backend API documentation and test out requests at https://aegis-backend.runpod.io/docs.
+https://github.com/The-Vigil/Vigil_Assistant
+You can access the backend API documentation and test out requests at https://www.runpod.io/console/serverless.
 
 ## Features
 - Instant access to AEGIS, Vigil's AI Property Protection Consultant
